@@ -42,12 +42,14 @@ The model is implemented using Scikit-learn's `LogisticRegression` classifier.
 
 ## 📈 Model Evaluation
 
-The project evaluates the model on both:
+The model is evaluated on both training and test data using **accuracy score**.
 
-* Training data
-* Test data
+| Dataset       |   Accuracy |
+| ------------- | ---------: |
+| Training Data | **83.42%** |
+| Test Data     | **76.19%** |
 
-Accuracy is calculated using Scikit-learn's `accuracy_score`.
+The model achieved **76.19% accuracy on the test dataset**.
 
 ## 🔍 Prediction
 
