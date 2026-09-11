@@ -1,48 +1,98 @@
-# Rock vs Mine Prediction
+# 🪨 Rock vs Mine Prediction
 
-A Machine Learning project that predicts whether an object is a **Rock or a Mine** using sonar signal data.
+A Machine Learning classification project that predicts whether an object is a **Rock** or a **Mine** using sonar signal data.
 
-## Project Overview
+## 📌 Project Overview
 
-This project uses the **Sonar dataset** to train a machine learning model to classify objects as either Rock (`R`) or Mine (`M`) based on sonar signal measurements.
+The objective of this project is to build a machine learning model capable of classifying objects based on sonar signal measurements.
 
-## Dataset
+The project uses the sonar dataset and applies **Logistic Regression** to distinguish between:
 
-The dataset contains sonar signal readings collected from objects. Each sample contains multiple numerical features representing the sonar signal, along with a label indicating whether the object is a Rock or a Mine.
+* `R` → Rock
+* `M` → Mine
 
-## Model
+## 📊 Dataset
 
-**Machine Learning Algorithm:** Logistic Regression
+The dataset contains:
 
-The model is trained on the sonar dataset and evaluated using separate training and testing data.
+* **208 samples**
+* **60 numerical features**
+* **1 target column**
 
-## Results
+The 60 features represent sonar signal measurements, while the final column contains the class label.
 
-| Dataset       |   Accuracy |
-| ------------- | ---------: |
-| Training Data | **83.42%** |
-| Test Data     | **76.19%** |
+## 🔄 Machine Learning Workflow
 
-The model achieved **76.19% accuracy on the test data**, which indicates its performance on previously unseen samples.
+1. Load the sonar dataset
+2. Explore the dataset
+3. Separate features and target labels
+4. Split the data into training and testing sets
+5. Use stratified sampling to preserve the class distribution
+6. Train a Logistic Regression model
+7. Evaluate the model using accuracy
+8. Use the trained model to make predictions on new sonar data
 
-## Technologies Used
+The dataset is divided using a **90/10 train-test split** with stratification.
+
+## 🤖 Model
+
+**Logistic Regression**
+
+The model is implemented using Scikit-learn's `LogisticRegression` classifier.
+
+## 📈 Model Evaluation
+
+The project evaluates the model on both:
+
+* Training data
+* Test data
+
+Accuracy is calculated using Scikit-learn's `accuracy_score`.
+
+## 🔍 Prediction
+
+The trained model can also classify a new sonar signal by reshaping the input data and passing it to the model for prediction.
+
+The notebook includes an example prediction that classifies an input sonar signal as either a **Rock** or a **Mine**.
+
+## 🛠️ Technologies Used
 
 * Python
-* Google Colab
 * NumPy
 * Pandas
 * Scikit-learn
 * Logistic Regression
+* Google Colab
 
-## Project File
+## 📂 Project Structure
 
-The complete implementation is available in the Jupyter Notebook:
+```text
+rock-vs-mine-prediction/
+│
+├── rock_vs_mine_prediction.ipynb
+└── README.md
+```
 
-`rock_vs_mine.ipynb`
+## ▶️ How to Run
 
-## How to Run
+The project can be run using **Google Colab**.
 
 1. Open the notebook in Google Colab.
-2. Upload or provide the required dataset.
+2. Upload the required sonar dataset.
 3. Run the notebook cells sequentially.
-4. The model will train and display its accuracy on the training and test datasets.
+4. The model will train on the dataset.
+5. Training and testing accuracy will be calculated.
+6. You can provide sonar signal values to generate a Rock/Mine prediction.
+
+## 🚀 Future Improvements
+
+* Compare Logistic Regression with other classification algorithms
+* Add a confusion matrix
+* Evaluate precision, recall, and F1-score
+* Perform feature scaling
+* Tune model hyperparameters
+* Compare model performance using cross-validation
+
+## 👨‍💻 Author
+
+**Harshul Sharma**
